@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title>COMPAS</title>
+  </head>
+  <body>
+    <section>
+        <div class="navbar">
+            <nav>
+                <a href="../index.html">Início</a>
+                <a href="../case02/index.html">WATSON</a>
+            </nav>
+        </div>
+      <div class="content-main">
+        <h2>Ética da IA na Justiça Criminal: O Caso COMPAS</h2>
+        <div class="grid-container">
+          <div class="content-info content-box">
+            <h3>Contexto: O Algoritmo COMPAS</h3>
+            <p>
+              O COMPAS (Correctional Offender Management Profiling for
+              Alternative Sanctions) é um algoritmo proprietário desenvolvido
+              pela Northpointe (agora Equivant) e amplamente utilizado nos
+              Estados Unidos desde 1998. Seu objetivo é auxiliar juízes e
+              oficiais de liberdade condicional na tomada de decisões,
+              avaliando o risco de reincidência criminal de réus.
+            </p>
+            <p>
+              O sistema gera uma pontuação de risco baseada em 137 variáveis,
+              incluindo histórico criminal, dados demográficos e informações de
+              entrevistas, categorizando os indivíduos em níveis de risco baixo,
+              médio ou alto. A promessa era trazer objetividade e eficiência ao
+              sistema de justiça, reduzindo vieses humanos e otimizando a
+              alocação de recursos.
+            </p>
+          </div>
+          <div class="content-problem content-box">
+            <h3>Problema: Viés Racial e Injustiça Algorítmica</h3>
+            <p>
+              Em 2016, uma investigação do ProPublica revelou que o algoritmo
+              COMPAS apresentava um viés racial significativo, resultando em
+              avaliações de risco inconsistentes e injustas entre diferentes
+              grupos étnicos.
+            </p>
+            <ul>
+              <li>
+                Pessoas negras tinham quase o dobro de probabilidade de serem
+                classificadas erroneamente como de alto risco de reincidência
+                em comparação com pessoas brancas, mesmo quando não reincidiam.
+              </li>
+              <li>
+                Por outro lado, pessoas brancas eram mais propensas a serem
+                classificadas erroneamente como de baixo risco, mesmo quando
+                reincidiam.
+              </li>
+              <li>
+                O algoritmo não era "neutro" ou "objetivo" como prometido, mas
+                sim refletia e amplificava preconceitos existentes nos dados de
+                treinamento e na sociedade. Isso levantou sérias questões sobre
+                a equidade e a responsabilidade de sistemas de IA em contextos
+                críticos como a justiça.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-quiz">
+          <h3>Quiz: Avaliações de Risco do COMPAS</h3>
+          <p>
+            Tente prever a avaliação de risco que o algoritmo COMPAS daria para
+            os seguintes réus, considerando o viés racial discutido.
+          </p>
+
+          <div class="quiz-container">
+            <div id="question-1" class="quiz-question">
+              <h4>Caso 1: "Robert Doe"</h4>
+              <p>
+                <span class="font-semibold">Réu:</span> Robert Doe, 32 anos,
+                homem negro.
+              </p>
+              <p>
+                <span class="font-semibold">Histórico:</span> Pequenos delitos
+                (furto em loja) há 5 anos, sem condenações graves. Empregado
+                estável.
+              </p>
+              <p>
+                <span class="font-semibold">Situação Atual:</span> Acusado de
+                posse de maconha (pequena quantidade).
+              </p>
+              <p class="question-text">
+                Qual seria a avaliação de risco do COMPAS para este réu?
+              </p>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="baixo" />
+                  <span>Risco Baixo</span>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="medio" />
+                  <span>Risco Médio</span>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="alto" />
+                  <span>Risco Alto</span>
+                </label>
+              </div>
+              <button class="quiz-button check-answer" data-question-id="1">
+                Ver Resposta
+              </button>
+              <div id="feedback-1" class="feedback-area"></div>
+            </div>
+
+            <div id="question-2" class="quiz-question">
+              <h4>Caso 2: "John Smith"</h4>
+              <p>
+                <span class="font-semibold">Réu:</span> John Smith, 35 anos,
+                homem branco.
+              </p>
+              <p>
+                <span class="font-semibold">Histórico:</span> Histórico de
+                agressão e posse de armas há 2 anos, com condenação e liberdade
+                condicional.
+              </p>
+              <p>
+                <span class="font-semibold">Situação Atual:</span> Acusado de
+                dirigir sob influência de álcool.
+              </p>
+              <p class="question-text">
+                Qual seria a avaliação de risco do COMPAS para este réu?
+              </p>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="baixo" />
+                  <span>Risco Baixo</span>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="medio" />
+                  <span>Risco Médio</span>
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="alto" />
+                  <span>Risco Alto</span>
+                </label>
+              </div>
+              <button class="quiz-button check-answer" data-question-id="2">
+                Ver Resposta
+              </button>
+              <div id="feedback-2" class="feedback-area"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const checkAnswerButtons = document.querySelectorAll('.check-answer');
+
+        checkAnswerButtons.forEach(button => {
+          button.addEventListener('click', event => {
+            const questionId = event.target.dataset.questionId;
+            const selectedOption = document.querySelector(
+              `input[name="q${questionId}"]:checked`
+            );
+            const feedbackElement = document.getElementById(
+              `feedback-${questionId}`
+            );
+
+            if (!selectedOption) {
+              feedbackElement.innerHTML = `<span class="result-text">Por favor, selecione uma opção.</span>`;
+              feedbackElement.classList.add('fade-in-text');
+              return;
+            }
+
+            const userAnswer = selectedOption.value;
+            let compasPrediction = '';
+            let unbiasedAssessment = '';
+            let explanation = '';
+            let isUserCorrect = false;
+
+            if (questionId === '1') {
+              compasPrediction = 'médio';
+              unbiasedAssessment = 'baixo';
+              explanation =
+                'O COMPAS classificou Robert Doe com risco médio, mesmo com um histórico de pequenos delitos e estabilidade. Isso demonstra o viés do algoritmo em superestimar o risco para indivíduos negros.';
+              isUserCorrect = userAnswer === compasPrediction;
+            } else if (questionId === '2') {
+              compasPrediction = 'baixo';
+              unbiasedAssessment = 'médio a alto';
+              explanation =
+                'O COMPAS classificou John Smith com risco baixo, apesar de um histórico de delitos mais graves. Isso ilustra o viés do algoritmo em subestimar o risco para indivíduos brancos.';
+              isUserCorrect = userAnswer === compasPrediction;
+            }
+
+            let feedbackHtml = '';
+            if (isUserCorrect) {
+              feedbackHtml += `<p class="correct-text">✅ Sua previsão para o COMPAS está correta!</p>`;
+            } else {
+              feedbackHtml += `<p class="result-text">❌ Sua previsão está incorreta.</p>`;
+            }
+
+            feedbackHtml += `
+              <p class="mt-2">
+                <span class="font-semibold">Avaliação do COMPAS:</span> <span class="result-text">${
+                  compasPrediction.charAt(0).toUpperCase() +
+                  compasPrediction.slice(1)
+                }</span>
+              </p>
+              <p>
+                <span class="font-semibold">Avaliação Real (sem viés):</span> <span class="correct-text">${
+                  unbiasedAssessment.charAt(0).toUpperCase() +
+                  unbiasedAssessment.slice(1)
+                }</span>
+              </p>
+              <p class="mt-2 text-gray-700">
+                <span class="font-semibold">Explicação:</span> ${explanation}
+              </p>
+            `;
+
+            feedbackElement.innerHTML = feedbackHtml;
+            feedbackElement.classList.add('fade-in-text');
+            button.disabled = true;
+            const radioButtons = document.querySelectorAll(
+              `input[name="q${questionId}"]`
+            );
+            radioButtons.forEach(radio => (radio.disabled = true));
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

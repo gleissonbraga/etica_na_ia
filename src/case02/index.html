@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../global.css" />
+    <title>WATSON</title>
+  </head>
+  <body>
+    <section>
+      <div class="navbar">
+        <nav>
+          <a href="../index.html">Início</a>
+          <a href="../case01/index.html">COMPAS</a>
+        </nav>
+      </div>
+      <div class="content-main">
+        <h2>Ética da IA na Medicina</h2>
+        <div class="content-main-info">
+          <div class="content-info">
+            <h3>Contexto: IBM Watson for Oncology</h3>
+            <p>
+              A IBM desenvolveu o Watson for Oncology, um sistema de
+              Inteligência Artificial projetado para auxiliar médicos no
+              diagnóstico e na recomendação de tratamentos para pacientes com
+              câncer. Baseado em uma vasta base de dados médicos e em
+              colaboração com o renomado hospital Memorial Sloan Kettering, nos
+              EUA, o objetivo era otimizar e personalizar o cuidado oncológico.
+            </p>
+            <p>
+              A promessa era revolucionar a medicina, oferecendo acesso rápido a
+              informações atualizadas e a melhores práticas de tratamento,
+              superando a capacidade humana de processar grandes volumes de
+              dados.
+            </p>
+          </div>
+          <div class="content-problem">
+            <h3>Problema: Recomendações Incorretas e Perigosas</h3>
+            <p>
+              Entre 2016 e 2018, o Watson for Oncology enfrentou severas
+              críticas internas e externas. Relatos indicavam que o sistema
+              estava oferecendo recomendações de tratamento incorretas ou até
+              perigosas.
+            </p>
+            <ul>
+              <li>
+                Um exemplo notório foi a sugestão de medicações inadequadas para
+                pacientes com tipos específicos de câncer, expondo-os a riscos
+                desnecessários.
+              </li>
+              <li>
+                Documentos vazados revelaram que os testes iniciais do Watson
+                foram conduzidos com dados sintéticos, e não com informações de
+                pacientes reais, comprometendo a validação de sua eficácia em
+                cenários práticos.
+              </li>
+              <li>
+                Médicos usuários reportaram que a IA falhava em considerar
+                nuances clínicas cruciais, como o histórico médico detalhado do
+                paciente ou características genéticas específicas, que são
+                vitais para um diagnóstico e tratamento precisos.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content-cases">
+          <h3>Casos Ilustrativos: Laudos Médicos com IA</h3>
+          <span>Clique para ver o diagnóstico incorreto da IA</span>
+          <div class="content-case_second">
+            <div id="report1">
+              <h4>Laudo Médico 1: Caso "Maria Silva"</h4>
+              <p><span>Paciente: </span> Maria Silva, 68 anos</p>
+              <p>
+                <span>Histórico: </span> Câncer de pulmão de pequenas células
+                (CPPC), histórico de insuficiência renal crônica.
+              </p>
+              <p>
+                <span>Exames: </span> Biópsia confirmando CPPC. Função renal
+                comprometida (creatinina elevada).
+              </p>
+              <div class="content-case_second_correct">
+                <h5>Diagnóstico e Recomendação da IA:</h5>
+                <p>
+                  Diagnóstico: Câncer de Pulmão de Pequenas Células.
+                  Recomendação: Quimioterapia com Cisplatina e Etoposídeo.
+                </p>
+                <button class="reveal-button" data-report-id="1">
+                  Ver Diagnóstico Incorreto da IA
+                </button>
+                <p id="ai-diagnosis-1"></p>
+              </div>
+            </div>
+            <div id="report2">
+              <h4>Laudo Médico 2: Caso "João Pereira"</h4>
+              <p><span>Paciente: </span> João Pereira, 55 anos</p>
+              <p>
+                <span>Histórico: </span> Melanoma estágio III, com mutação BRAF
+                V600E. Histórico de doença cardíaca isquêmica.
+              </p>
+              <p>
+                <span>Exames: </span> Biópsia confirmando melanoma. Teste
+                genético positivo para mutação BRAF.
+              </p>
+              <div class="content-case_second_correct">
+                <h5>Diagnóstico e Recomendação da IA:</h5>
+                <p>
+                  Diagnóstico: Melanoma Estágio III (BRAF Positivo).<br />
+                  Recomendação: Terapia-alvo com Dabrafenibe e Trametinibe.
+                </p>
+                <button class="reveal-button" data-report-id="2">
+                  Ver Diagnóstico Incorreto da IA
+                </button>
+                <p id="ai-diagnosis-2"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const revealButtons = document.querySelectorAll(".reveal-button");
+
+        revealButtons.forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const reportId = event.target.dataset.reportId;
+            const aiDiagnosisElement = document.getElementById(
+              `ai-diagnosis-${reportId}`
+            );
+
+            if (reportId === "1") {
+              aiDiagnosisElement.innerHTML = `
+                <span class="error-text" style="color: red;">Diagnóstico Incorreto da IA: Câncer de Pulmão de Pequenas Células.</span>
+                <br><span class="error-text" style="color: red;">Recomendação Perigosa: Quimioterapia com Cisplatina e Etoposídeo.</span>
+                <br><span class="error-text" style="color: red;">⚠️ A IA FALHOU em considerar a insuficiência renal, tornando a Cisplatina altamente tóxica para esta paciente.</span>
+              `;
+            } else if (reportId === "2") {
+              aiDiagnosisElement.innerHTML = `
+                <span class="error-text" style="color: red;">Diagnóstico Incorreto da IA: Melanoma Estágio III (BRAF Positivo).</span>
+                <br><span class="error-text" style="color: red;">Recomendação Perigosa: Terapia-alvo com Dabrafenibe e Trametinibe.</span>
+                <br><span class="error-text" style="color: red;">⚠️ A IA FALHOU em considerar a doença cardíaca isquêmica, onde Dabrafenibe e Trametinibe podem agravar condições cardíacas pré-existentes.</span>
+              `;
+            }
+
+            button.disabled = true;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,281 @@
+body {
+font-family: 'Inter', sans-serif;
+background-color: #f0f2f5;
+color: #333;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+min-height: 100vh;
+padding: 2rem;
+margin: 0;
+box-sizing: border-box;
+}
+
+section {
+width: 80%;
+background-color: #ffffff;
+padding: 2rem;
+border-radius: 0.75rem;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+position: absolute;
+left: 20px;
+top: 50px;
+border: 1px solid rgba(0, 0, 0, 0.356);
+padding: 10px;
+border-radius: 10px;
+background: #ffffff;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.navbar nav{
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.navbar nav a{
+text-decoration: none;
+padding: 8px;
+font-weight: bold;
+color: black;
+}
+
+.navbar nav a:hover{
+color: #4f46e5;
+border-radius: 10px;
+background-color: #37415133;
+}
+
+h2 {
+font-size: 2.8rem;
+font-weight: 700;
+text-align: center;
+color:#3A58B9;
+margin-bottom: 2rem;
+}
+
+.image-container {
+margin-bottom: 2rem;
+display: flex;
+justify-content: center;
+}
+
+.image-container img {
+border-radius: 0.5rem;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+0 2px 4px -1px rgba(0, 0, 0, 0.06);
+width: 100%;
+height: auto;
+object-fit: cover;
+}
+
+.grid-container {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 2rem;
+margin-bottom: 1rem;
+
+}
+
+.content-box {
+width: 44%;
+padding: 1.5rem;
+border-radius: 0.5rem;
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+transition: transform 0.2s ease;
+}
+
+.content-box:hover {
+transform: scale(1.02);
+}
+
+.content-info {
+background-color: #f9fafb;
+}
+
+.content-problem {
+background-color: #fef2f2;
+border: 1px solid #fee2e2;
+}
+
+.content-box h3 {
+font-size: 1.5rem;
+font-weight: 600;
+margin-bottom: 1rem;
+}
+
+.content-info h3 {
+color: #374151;
+}
+
+.content-problem h3 {
+color: #b91c1c;
+}
+
+.content-box p {
+font-size: 1rem;
+color: #4b5563;
+margin-bottom: 1rem;
+line-height: 1.625;
+}
+
+.content-problem p {
+color: #dc2626;
+}
+
+.content-problem ul {
+list-style-type: disc;
+padding-left: 1.25rem;
+margin-top: 0.5rem;
+margin-bottom: 0;
+}
+
+.content-problem ul li {
+color: #dc2626;
+margin-bottom: 0.5rem;
+}
+
+.content-quiz {
+background-color: #eef2ff;
+padding: 1.5rem;
+border-radius: 0.5rem;
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+border: 1px solid #c7d2fe;
+}
+
+.content-quiz h3 {
+font-size: 1.5rem;
+font-weight: 600;
+color: #2563eb;
+margin-bottom: 1rem;
+}
+
+.content-quiz > p {
+color: #3b82f6;
+margin-bottom: 1.5rem;
+display: block;
+}
+
+.quiz-container {
+display: flex;
+flex-direction: column;
+gap: 2rem;
+}
+
+.quiz-question {
+background-color: #ffffff;
+padding: 1.5rem;
+border-radius: 0.5rem;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.quiz-question h4 {
+font-size: 1.25rem;
+font-weight: 500;
+color: #1f2937;
+margin-bottom: 0.75rem;
+}
+
+.quiz-question p {
+font-size: 1rem;
+color: #374151;
+margin-bottom: 0.5rem;
+}
+
+.quiz-question p:last-of-type {
+margin-bottom: 1rem;
+}
+
+.quiz-question .font-semibold {
+font-weight: 600;
+}
+
+.quiz-question .question-text {
+font-size: 1rem;
+color: #1f2937;
+font-weight: 600;
+margin-bottom: 0.75rem;
+}
+
+.quiz-options {
+margin-bottom: 1rem;
+}
+
+.quiz-option {
+display: flex;
+align-items: center;
+margin-bottom: 0.5rem;
+cursor: pointer;
+padding: 0.25rem;
+}
+
+.quiz-option input[type='radio'] {
+margin-right: 0.75rem;
+accent-color: #4f46e5;
+}
+
+.quiz-option span {
+color: #374151;
+}
+
+.quiz-option:hover {
+background-color: #e0e7ff;
+border-radius: 0.25rem;
+}
+
+.quiz-button {
+background-color: #4f46e5;
+color: white;
+padding: 0.75rem 1.5rem;
+border-radius: 0.5rem;
+font-weight: 600;
+transition: background-color 0.3s ease;
+cursor: pointer;
+border: none;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-button:hover {
+background-color: #4338ca;
+}
+
+.quiz-button:disabled {
+background-color: #9ca3af;
+cursor: not-allowed;
+}
+
+.feedback-area {
+margin-top: 1rem;
+font-size: 0.875rem;
+}
+
+.result-text {
+color: #ef4444;
+font-weight: 500;
+}
+
+.correct-text {
+color: #10b981;
+font-weight: 500;
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(10px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.fade-in-text {
+animation: fadeIn 0.5s ease-out forwards;
+}
